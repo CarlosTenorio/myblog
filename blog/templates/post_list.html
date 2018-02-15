@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Álbum{% endblock %}
+{% block body %}
+
+  {# <img class="img-fluid" src="{% static " img/coverHome.jpg " %}" alt=""> #}
+  <h1 class="blog-title text-center col-12">
+    Tutorials and posts about <span class="blog-title-django">Django</span>,
+    <br><span class="blog-title-angular">Angular</span> and Web Development
+  </h1>
+
+  <div class="col-md-8">
+
+  <!-- Posts List -->
+  {% for post in posts %}
+  <div class="col-md-12 post-container">
+    <h1 class="post-title text-center">{{ post.title_es }}</h1>
+    <img class="img-fluid img-post col-12" src="{{ post.image.url }}" />
+    <div class="col-12 post-info">
+      <i class="fa fa-calendar">&nbsp{{ post.published_date }}</i>
+    </div>
+    <div class="col-12">
+      <p>{{ post.text_es|linebreaksbr }}</p>
+      <a href="#">Leer más</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+  <div class="col-md-4">
+    <h1 class="post-title text-center">About me</h1>
+  </div>
+
+{% endblock %}
