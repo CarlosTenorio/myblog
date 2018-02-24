@@ -7,6 +7,8 @@ class Post(models.Model):
         on_delete=models.PROTECT, verbose_name='Autor')
     title_en = models.CharField(max_length=200, null=True)
     title_es = models.CharField(max_length=200, null=True)
+    preview_en = models.TextField(default="")
+    preview_es = models.TextField(default="")
     text_en = models.TextField(default="")
     text_es = models.TextField(default="")
     created_date = models.DateTimeField(default=timezone.now)

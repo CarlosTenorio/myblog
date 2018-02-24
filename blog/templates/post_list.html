@@ -1,35 +1,43 @@
 {% extends "layout.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}Álbum{% endblock %}
 {% block body %}
 
-  {# <img class="img-fluid" src="{% static " img/coverHome.jpg " %}" alt=""> #}
   <h1 class="blog-title text-center col-12">
-    Tutorials and posts about <span class="blog-title-django">Django</span>,
-    <br><span class="blog-title-angular">Angular</span> and Web Development
+    {% trans "Tutorials and posts about" %}&nbsp;<span class="blog-title-django">Django</span>,&nbsp;
+    <br><span class="blog-title-angular">Angular&nbsp;</span>{% trans "and" %}&nbsp;Web Development
   </h1>
 
   <div class="col-md-8">
 
   <!-- Posts List -->
   {% for post in posts %}
-  <div class="col-md-12 post-container">
-    <h1 class="post-title text-center">{{ post.title_es }}</h1>
-    <img class="img-fluid img-post col-12" src="{{ post.image.url }}" />
-    <div class="col-12 post-info">
-      <i class="fa fa-calendar">&nbsp{{ post.published_date }}</i>
+  <div class="col-md-11 post-container">
+    <div class="post-content">
+      <h1 class="post-title text-center">{{ post.title_es }}</h1>
+      <img class="img-fluid img-post col-12" src="{{ post.image.url }}" />
+      <div class="col-12 post-info">
+        <i class="fa fa-calendar">&nbsp{{ post.published_date }}</i>
+      </div>
+      <div class="col-12">
+        <p>{{ post.preview_es|linebreaksbr }}</p>
+      </div>
     </div>
-    <div class="col-12">
-      <p>{{ post.text_es|linebreaksbr }}</p>
-      <a href="#">Leer más</a>
-    </div>
+    <a class="post-read-more" href="#">Leer más</a>
   </div>
   {% endfor %}
 </div>
 
-  <div class="col-md-4">
+  <div class="col-md-4 about-me-container">
     <h1 class="post-title text-center">About me</h1>
+    <img class="img-fluid about-me-img" src="{% static "img/profile.jpg" %}" alt="">
+    <p>
+      My Name is Carlos Tenorio Pérez. I'm software engeniering in Palma de
+      Mallorca. I'm working on Babtec and I write about Django, Angular and
+      web development.
+    </p>
   </div>
 
 {% endblock %}
