@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}Carlos Tenorio BLOG{% endblock %}
+{% block body %}
+
+  <div class="row post-detail">
+    <div class="col-8">
+      <h1 class="text-center">{{ post.title_es }}</h1>
+      {% if post.image %}
+        <img class="img-fluid img-post-detail col-12" src="{{ post.image.url }}" />
+      {% endif %}
+      <div class="text-center post-detail-sub">
+        <i class="fa fa-calendar">&nbsp;{{ post.published_date }}</i>
+      </div>
+      <p>{{ post.text_es|linebreaksbr }}</p>
+    </div>
+
+    {% include "components/info_profile.html"%}
+  </div>
+
+{% endblock %}

@@ -1,6 +1,8 @@
+{% load i18n %}
+
 <nav class="navbar navbar-expand-md navbar-custom">
   <!-- Brand -->
-  <a class="navbar-brand nav-title-custom" href="#">Carlos Tenorio BLOG</a>
+  <a class="navbar-brand nav-title-custom" href="{% url 'home' %}">Carlos Tenorio BLOG</a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -11,14 +13,10 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link nav-link-custom" href="#">Home</a>
-      </li>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-link-custom" href="#">All Posts</a>
+        <a class="nav-link nav-link-custom" href="{% url 'home' %}">{% trans "All Posts" %}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-link-custom" href="#">Contact</a>
+        <a class="nav-link nav-link-custom" href="#">{% trans "Contact" %}</a>
       </li>
     </ul>
   </div>

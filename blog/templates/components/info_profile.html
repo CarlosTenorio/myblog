@@ -1,0 +1,10 @@
+{% load static %}
+{% load i18n %}
+
+<div class="col-md-4 about-me-container">
+  <h1 class="post-title text-center">{% trans "About me" %}</h1>
+  <img class="img-fluid about-me-img" src="{% static "img/profile.jpg" %}" alt="">
+  <p>
+    {% trans "My Name is Carlos Tenorio Pérez. I'm software engeniering in Palma de Mallorca. I'm working on Babtec and I write about Django, Angular and web development." %}
+  </p>
+</div>

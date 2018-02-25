@@ -1,21 +1,32 @@
-<footer class="footer">
 
+{% load i18n %}
+<footer class="footer">
   <div class="footer-links">
     <ul>
       <li><h3>Carlos Tenorio Blog</h3></li>
-      <li><a>Home</a></li>
-      <li><a>Ayuda</a></li>
+      <li><a href="{% url 'home' %}">Home</a></li>
     </ul>
     <ul>
-      <li><h3>Sobre nosotros</h3></li>
-      <li><a>Contacto</a></li>
+      <li><h3>{% trans "Contact" %}</h3></li>
+      <li><a>{% trans "Contact" %}</a></li>
     </ul>
     <ul>
-      <li><h3>Sígueme</h3></li>
-      <li><a href="https://www.instagram.com/tinta_y_piel_comparador/" target="_blank"><i class="fa fa-twitter"></i> Instagram</a></li>
-      <li><a href="https://www.facebook.com/Tinta-y-Piel-339326989797545/" target="_blank"><i class="fa fa-giyhub"></i> Facebook</a></li>
+      <li><h3>{% trans "Follow me" %}</h3></li>
+      <li>
+        <a href="https://twitter.com/ctenoriop" target="_blank"><i class="fa fa-twitter">
+          </i>&nbsp;Twitter
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/CarlosTenorio" target="_blank">
+          <i class="fa fa-github"></i>&nbsp;Github
+        </a>
+      <li>
+        <a href="https://www.linkedin.com/in/carlos-tenorio-p%C3%A9rez-806978112/" target="_blank">
+          <i class="fa fa-linkedin"></i>&nbsp;Linkedin
+        </a>
+      </li>
     </ul>
   </div>
   <hr>
-
 </footer>
