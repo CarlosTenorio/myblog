@@ -21,3 +21,6 @@ update-lang:
 # Task automation
 gulp:
 	gulp watch
+
+pip:
+	pip install -r requirements.txt

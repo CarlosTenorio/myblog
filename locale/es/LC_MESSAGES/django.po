@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-25 18:23+0100\n"
+"POT-Creation-Date: 2018-03-03 19:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,9 +20,9 @@ msgstr ""
 
 #: blog/templates/components/footer.html:10
 #: blog/templates/components/footer.html:11
-#: blog/templates/components/navbar.html:17
+#: blog/templates/components/navbar.html:19
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #: blog/templates/components/footer.html:14
 msgid "Follow me"
@@ -37,10 +37,11 @@ msgid ""
 "My Name is Carlos Tenorio Pérez. I'm software engeniering in Palma de "
 "Mallorca. I'm working on Babtec and I write about Django, Angular and web "
 "development."
-msgstr "Mi nombre es Carlos Tenorio Pérez. Soy ingeniero informático en Palma de "
+msgstr ""
+"Mi nombre es Carlos Tenorio Pérez. Soy ingeniero informático en Palma de "
 "Mallorca. Trabajo en Babtec y escribo sobre Django, Angular y desarrollo web."
 
-#: blog/templates/components/navbar.html:14
+#: blog/templates/components/navbar.html:16
 msgid "All Posts"
 msgstr "Todos los posts"
 
@@ -52,7 +53,7 @@ msgstr "Tutoriales y posts sobre"
 msgid "and"
 msgstr "y"
 
-#: blog/templates/post_list.html:29
+#: blog/templates/post_list.html:44
 msgid "Read more"
 msgstr "Leer más"
 

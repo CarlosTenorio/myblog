@@ -7,14 +7,27 @@
 
   <div class="row post-detail">
     <div class="col-8">
-      <h1 class="text-center">{{ post.title_es }}</h1>
+      {# Title #}
+      {% if request.LANGUAGE_CODE == 'es' %}
+        <h1 class="text-center">{{ post.title_es }}</h1>
+      {% elif request.LANGUAGE_CODE == 'en' %}
+        <h1 class="text-center">{{ post.title_en }}</h1>
+      {% endif %}
+
+      {# Image #}
       {% if post.image %}
         <img class="img-fluid img-post-detail col-12" src="{{ post.image.url }}" />
       {% endif %}
       <div class="text-center post-detail-sub">
         <i class="fa fa-calendar">&nbsp;{{ post.published_date }}</i>
       </div>
-      <p>{{ post.text_es|linebreaksbr }}</p>
+
+      {# Text #}
+      {% if request.LANGUAGE_CODE == 'es' %}
+        <p>{{ post.text_es|safe|linebreaksbr }}</p>
+      {% elif request.LANGUAGE_CODE == 'en' %}
+        <p>{{ post.text_en|safe|linebreaksbr }}</p>
+      {% endif %}
     </div>
 
     {% include "components/info_profile.html"%}

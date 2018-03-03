@@ -13,7 +13,7 @@
   <div class="col-md-8">
     {# Posts List #}
     {% for post in posts %}
-      <div class="col-md-11 post-container">
+      <div id="post-{{post.pk}}" class="col-md-11 post-container">
         <div class="post-content">
           {# Title #}
           {% if request.LANGUAGE_CODE == 'es' %}
@@ -35,9 +35,9 @@
           {# Preview text #}
           <div class="col-12">
             {% if request.LANGUAGE_CODE == 'es' %}
-              <p>{{ post.preview_es|linebreaksbr }}</p>
+              <p>{{ post.preview_es|safe|linebreaksbr }}</p>
   		      {% elif request.LANGUAGE_CODE == 'en' %}
-              <p>{{ post.preview_en|linebreaksbr }}</p>
+              <p>{{ post.preview_en|safe|linebreaksbr }}</p>
             {% endif %}
           </div>
         </div>
@@ -47,5 +47,14 @@
   </div>
   {# About me #}
   {% include "components/info_profile.html"%}
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".post-container").on("click", function () {
+            var pk = $(this).attr('id').split('-')[1]; // gives the post pk
+            window.location.href = window.location.href + 'post/' + pk;
+        });
+    });
+  </script>
 
 {% endblock %}
