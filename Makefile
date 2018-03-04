@@ -1,5 +1,20 @@
+#Install dependencies
+install-dep:
+	sudo apt-get update
+	sudo apt-get install gettext
+	sudo apt-get install nginx
+
+# Development
 runserver:
 	python manage.py runserver
+
+#Deployment
+check-deploy:
+	python manage.py check --deploy
+deploy:
+	gunicorn myblog.wsgi:application -w=4 --bind=0.0.0.0:8000
+nginx:
+	sudo ln -s /etc/nginx/sites-available/ctenoriop.pythonanywhere.com.conf /etc/nginx/sites-enabled/
 
 # Statics
 collectstatic:
