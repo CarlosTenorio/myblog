@@ -6,10 +6,11 @@
   "main": "index.js",
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "gulp-clean-css": "^3.9.2",
     "gulp-cli": "^2.0.1",
     "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^4.1.0",
     "gulp-less": "^3.4.0",
-    "gulp-clean-css": "^3.9.2",
     "less": "^2.7.3",
     "less-plugin-autoprefix": "^1.5.1",
     "path": "^0.12.7"

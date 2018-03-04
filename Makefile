@@ -18,6 +18,7 @@ nginx:
 
 # Statics
 collectstatic:
+	gulp
 	python manage.py collectstatic
 
 # Migrations
@@ -37,5 +38,6 @@ update-lang:
 gulp:
 	gulp watch
 
+# Install python packages
 pip:
 	pip install -r requirements.txt
