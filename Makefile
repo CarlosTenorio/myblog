@@ -1,43 +1,45 @@
-#Install dependencies
-install-dep:
-	sudo apt-get update
-	sudo apt-get install gettext
-	sudo apt-get install nginx
+install:
+	docker-compose run --no-deps --rm npm install
+	docker-compose run --no-deps --rm -T gulp
 
-# Development
-runserver:
-	python manage.py runserver
-
-#Deployment
-check-deploy:
-	python manage.py check --deploy
-deploy:
-	gunicorn myblog.wsgi:application -w=4 --bind=0.0.0.0:8000
-nginx:
-	sudo ln -s /etc/nginx/sites-available/ctenoriop.pythonanywhere.com.conf /etc/nginx/sites-enabled/
-
-# Statics
 collectstatic:
-	gulp
-	python manage.py collectstatic
-
-# Migrations
+	docker-compose run --rm gulp
+	docker-compose run --rm web collectstatic --noinput
 makemigrations:
-	python manage.py makemigrations
-
+	docker-compose run --rm --service-ports web makemigrations
 migrate:
-	python manage.py migrate
+	docker-compose run --rm --service-ports web migrate
 
-# Lenguages
-compile-lang:
-	django-admin compilemessages -l=es -l=en
-update-lang:
-	django-admin makemessages -l es --ignore="node_modules/*" --ignore="myblogvenv/*"
+create-superuser:
+	docker-compose run --rm --service-ports web createsuperuser
 
-# Task automation
-gulp:
-	gulp watch
+devel:
+	docker-compose run --rm --service-ports dev
+rebuild-web:
+	docker-compose up --build web
+rebuild-dev:
+	docker-compose up --build dev
+rebuild-gunicorn:
+	docker-compose up --build gunicorn
 
-# Install python packages
-pip:
-	pip install -r requirements.txt
+gulp-watch:
+	docker-compose run --rm -T gulp watch
+
+# Deployment
+check-deploy:
+	docker-compose run --rm --service-ports web check --deploy
+deploy:
+	docker-compose run -d --rm --service-ports nginx
+
+# DB
+connect-db:
+	docker exec -i -t myblogweb_db_1 /bin/bash
+connect-gunicorn:
+	docker exec -i -t myblogweb_gunicorn_1 /bin/bash
+connect-dev:
+	docker exec -i -t myblogweb_dev_run_1 /bin/bash
+
+
+stop-rm:
+	cd tasks && \
+	./stop-rm-Dockers.sh
