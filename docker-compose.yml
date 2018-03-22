@@ -1,5 +1,11 @@
 web: &web
   build: .
+  environment:
+    - "DB_HOST=db"
+    - "DB_PORT=5432"
+    - "DB_PASSWORD=${DB_PASS}"
+    - "DB_USER=${DB_USER}"
+    - "DB_NAME=${DB_USER}"
   volumes:
     - ".:/opt/app/"
   links:
@@ -61,6 +67,10 @@ db:
     - "5432:5432"
   volumes:
     - "/opt/myblog/postgresql:/var/lib/postgresql/data"
+  environment:
+    - "POSTGRES_PASSWORD=${DB_PASS}"
+    - "POSTGRES_USER=${DB_USER}"
+    - "POSTGRES_DB=${DB_NAME}"
 
 memcached:
   image: "memcached:1.4.36"
