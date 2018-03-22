@@ -2,9 +2,6 @@
 Personal Django Blog
 
 ## Prerequisits
-gulp
-```sh
-npm install --global gulp-cli
 ```
 docker & docker-compose
 
