@@ -2,7 +2,6 @@
 Personal Django Blog
 
 ## Prerequisits
-```
 docker & docker-compose
 
 ## Instructions
