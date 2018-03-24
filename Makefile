@@ -39,6 +39,11 @@ connect-gunicorn:
 connect-dev:
 	docker exec -i -t myblogweb_dev_run_1 /bin/bash
 
+# Lenguages
+compile-lang:
+	docker-compose run --rm web compilemessages
+update-lang:
+	docker-compose run --rm web makemessages -a
 
 stop-rm:
 	cd tasks && \
