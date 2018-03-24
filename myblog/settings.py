@@ -140,7 +140,8 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 MEDIA_URL = '/media/'
 
+# Get True when HTTPS is avaiable on production
 if DEBUG:
     CSRF_COOKIE_SECURE = False
 else:
-    CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = False
