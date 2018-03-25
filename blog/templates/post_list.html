@@ -33,7 +33,7 @@
           </div>
 
           {# Preview text #}
-          <div class="col-12">
+          <div>
             {% if request.LANGUAGE_CODE == 'es' %}
               <p>{{ post.preview_es|safe|linebreaksbr }}</p>
   		      {% elif request.LANGUAGE_CODE == 'en' %}
