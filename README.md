@@ -41,7 +41,7 @@ make deploy
 
 Compile and prepare the key to translate on .po file
 ```
-make update-lang
+make compile-lang
 ```
 Update the translations
 ```
