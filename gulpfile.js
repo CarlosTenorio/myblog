@@ -4,6 +4,7 @@ var less = require('gulp-less');
 var concat = require('gulp-concat');
 var minifyCSS = require('gulp-clean-css');
 var lessPluginAutoPrefix = require('less-plugin-autoprefix');
+var sourcemaps = require('gulp-sourcemaps');
 var autoprefix = new lessPluginAutoPrefix({
   browsers: ["last 2 versions"]
 });
@@ -15,7 +16,7 @@ var paths = {
   less: ['src/less/**/*.less']
 };
 
-gulp.task('default', ['less', 'fonts', 'images']);
+gulp.task('default', ['scripts', 'less', 'fonts', 'images']);
 
 gulp.task('develop', ['default', 'watch']);
 
@@ -24,8 +25,21 @@ gulp.task('watch', function() {
   gulp.watch(paths.less, ['less']);
 });
 
+gulp.task('scripts', function() {
+  // scripts task
+  return gulp.src([
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    'src/**/*.js'
+  ])
+    .pipe(sourcemaps.init())
+    .pipe(concat('main.min.js'))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./myblog/staticfiles/js'));
+});
+
 gulp.task('less', function() {
-  // main task
+  // less task
   return gulp.src('./src/less/main.less')
     .pipe(less({
       plugins: [autoprefix]
