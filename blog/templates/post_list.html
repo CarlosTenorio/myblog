@@ -10,10 +10,10 @@
     <br><span class="blog-title-angular">Angular&nbsp;</span>{% trans "and" %}&nbsp;Web Development
   </h1>
 
-  <div class="col-md-8">
+  <div class="col-md-12 col-lg-8">
     {# Posts List #}
     {% for post in posts %}
-      <div id="post-{{post.pk}}" class="col-md-11 post-container">
+      <div id="post-{{post.pk}}" class="col-lg-11 post-container">
         <div class="post-content">
           {# Title #}
           {% if request.LANGUAGE_CODE == 'es' %}
