@@ -5,8 +5,8 @@
 {% block title %}Carlos Tenorio BLOG{% endblock %}
 {% block body %}
 
-  <div class="row post-detail">
-    <div class="col-lg-8">
+  <div class="post-detail">
+    <div class="col-lg-8 post-container">
       {# Title #}
       {% if request.LANGUAGE_CODE == 'es' %}
         <h1 class="text-center">{{ post.title_es }}</h1>
@@ -16,7 +16,7 @@
 
       {# Image #}
       {% if post.image %}
-        <img class="img-fluid img-post-detail col-12" src="{{ post.image.url }}" />
+        <img class="img-responsive img-post-detail col--xs-12" src="{{ post.image.url }}" />
       {% endif %}
       <div class="text-center post-detail-sub">
         <i class="fa fa-calendar">&nbsp;{{ post.published_date }}</i>

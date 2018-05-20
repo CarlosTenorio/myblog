@@ -5,7 +5,7 @@
 {% block title %}Carlos Tenorio BLOG{% endblock %}
 {% block body %}
 
-  <h1 class="blog-title text-center col-12">
+  <h1 class="blog-title text-center col-xs-12">
     {% trans "Tutorials and posts about" %}&nbsp;<span class="blog-title-django">Django</span>,&nbsp;
     <br><span class="blog-title-angular">Angular&nbsp;</span>{% trans "and" %}&nbsp;Web Development
   </h1>
@@ -24,11 +24,11 @@
 
           {# Image #}
           {% if post.image %}
-            <img class="img-fluid img-post col-12" src="{{ post.image.url }}" />
+            <img class="img-fluid img-post col-xs-12" src="{{ post.image.url }}" />
           {% endif %}
 
           {# Date #}
-          <div class="col-12 post-info">
+          <div class="col-xs-12 post-info">
             <i class="fa fa-calendar">&nbsp;{{ post.published_date }}</i>
           </div>
 
