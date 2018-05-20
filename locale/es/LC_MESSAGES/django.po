@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-03 19:40+0100\n"
+"POT-Creation-Date: 2018-05-20 22:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: blog/templates/components/footer.html:10
 #: blog/templates/components/footer.html:11
-#: blog/templates/components/navbar.html:19
+#: blog/templates/components/navbar.html:25
 msgid "Contact"
 msgstr "Contacto"
 
@@ -28,11 +28,12 @@ msgstr "Contacto"
 msgid "Follow me"
 msgstr "Sígueme"
 
-#: blog/templates/components/info_profile.html:5
-msgid "About me"
-msgstr "Sobre mi"
+#: blog/templates/components/info_profile_h.html:8
+msgid "By"
+msgstr "Por"
 
-#: blog/templates/components/info_profile.html:8
+#: blog/templates/components/info_profile_h.html:11
+#: blog/templates/components/info_profile_v.html:8
 msgid ""
 "My Name is Carlos Tenorio Pérez. I'm software engeniering in Palma de "
 "Mallorca. I'm working on Babtec and I write about Django, Angular and web "
@@ -41,7 +42,11 @@ msgstr ""
 "Mi nombre es Carlos Tenorio Pérez. Soy ingeniero informático en Palma de "
 "Mallorca. Trabajo en Babtec y escribo sobre Django, Angular y desarrollo web."
 
-#: blog/templates/components/navbar.html:16
+#: blog/templates/components/info_profile_v.html:5
+msgid "About me"
+msgstr "Sobre mi"
+
+#: blog/templates/components/navbar.html:22
 msgid "All Posts"
 msgstr "Todos los posts"
 
@@ -57,10 +62,10 @@ msgstr "y"
 msgid "Read more"
 msgstr "Leer más"
 
-#: myblog/settings.py:110
+#: myblog/settings.py:114
 msgid "Spanish"
 msgstr "Español"
 
-#: myblog/settings.py:111
+#: myblog/settings.py:115
 msgid "English"
 msgstr "Inglés"

@@ -6,7 +6,10 @@
 {% block body %}
 
   <div class="post-detail">
-    <div class="col-lg-8 post-container">
+    <div>
+      {% include "components/info_profile_h.html"%}
+    </div>
+    <div class="col-xs-12 post-container">
       {# Title #}
       {% if request.LANGUAGE_CODE == 'es' %}
         <h1 class="text-center">{{ post.title_es }}</h1>
@@ -29,8 +32,6 @@
         <p>{{ post.text_en|safe|linebreaksbr }}</p>
       {% endif %}
     </div>
-
-    {% include "components/info_profile.html"%}
   </div>
 
 {% endblock %}
